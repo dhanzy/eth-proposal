@@ -11,9 +11,7 @@ const Header = () => {
         </IconButton>
         <Box sx={{ flexGrow: 1 }} />
         <Box>
-          <Button variant="outlined" color="common.white">
-            Connect Wallet
-          </Button>
+          <Button variant="outlined">Connect Wallet</Button>
         </Box>
       </Toolbar>
     </AppBar>
