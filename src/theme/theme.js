@@ -6,6 +6,9 @@ const theme = responsiveFontSizes(
       common: {
         white: "#fff",
       },
+      secondary: {
+        main: "#fff",
+      },
     },
   })
 );
