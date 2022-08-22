@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+
+import theme from "./theme/theme";
+
+import MainLayout from "./components/layouts/MainLayout";
+import Home from "./pages/Home";
+import Proposal from "./pages/Proposal";
+import NewProposal from "./pages/NewProposal";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/proposal" element={<NewProposal />} />
+            <Route path="/proposal/:proposalId" element={<Proposal />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
