@@ -9,23 +9,27 @@ import Home from "./pages/Home";
 import Proposal from "./pages/Proposal";
 import NewProposal from "./pages/NewProposal";
 import "./App.css";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<ProposalLayout />}>
-            <Route path="/" element={<Home />} />
-          </Route>
-          <Route path="/proposal" element={<MainLayout />}>
-            <Route path="/proposal" element={<NewProposal />} />
-            <Route path="/proposal/:proposalId" element={<Proposal />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
+    <LocalizationProvider dateAdapter={AdapterMoment}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<ProposalLayout />}>
+              <Route path="/" element={<Home />} />
+            </Route>
+            <Route path="/proposal" element={<MainLayout />}>
+              <Route path="/proposal" element={<NewProposal />} />
+              <Route path="/proposal/:proposalId" element={<Proposal />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </LocalizationProvider>
   );
 }
 

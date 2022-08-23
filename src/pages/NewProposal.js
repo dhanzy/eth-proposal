@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { ArrowBack } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import { DateTimePicker } from "@mui/x-date-pickers";
 
 const NewProposal = () => {
   const navigate = useNavigate();
@@ -51,8 +52,14 @@ const NewProposal = () => {
           <CardHeader title="Actions" />
           <CardContent>
             <Stack spacing={2}>
-              <Button variant="outlined">Select Start Date</Button>
-              <Button variant="outlined">Select Start Date</Button>
+              <DateTimePicker
+                label="Select Start Date"
+                renderInput={(params) => <TextField {...params} />}
+              />
+              <DateTimePicker
+                label="Select End Date"
+                renderInput={(params) => <TextField {...params} />}
+              />
               <Button variant="contained">Publish</Button>
             </Stack>
           </CardContent>
