@@ -12,11 +12,13 @@ import { Link } from "react-router-dom";
 const VoteCard = ({ title, description, proposalId, address }) => {
   return (
     <Card>
-      <CardActionArea
-        component={Link}
-        to={`/proposal/${String(proposalId).substring(0, 3)}`}
-      >
-        {/* <CardHeader title={`Ethereum Finance by ${address}`} /> */}
+      <CardActionArea component={Link} to={`/proposal/${proposalId}`}>
+        <CardHeader
+          title={`Ethereum Finance by ${address.slice(0, 6)}...${address.slice(
+            -4,
+            address.length
+          )}`}
+        />
         <CardContent>
           <Box>
             <Typography variant="h5">{title}</Typography>

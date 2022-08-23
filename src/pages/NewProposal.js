@@ -2,45 +2,63 @@ import React from "react";
 import {
   Box,
   Button,
+  Card,
+  CardContent,
+  CardHeader,
+  Grid,
   IconButton,
-  Paper,
   Stack,
-  TextareaAutosize,
   TextField,
 } from "@mui/material";
-import { AddCircleOutlined, ArrowBack } from "@mui/icons-material";
+import { ArrowBack } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
 const NewProposal = () => {
   const navigate = useNavigate();
 
   return (
-    <Box>
-      <Box sx={{ maxWidth: "500px", margin: "auto", mb: 3 }}>
-        <IconButton onClick={() => navigate("/")}>
-          <ArrowBack />
-        </IconButton>
-      </Box>
-      <Paper sx={{ maxWidth: "500px", margin: "auto" }}>
-        <Box sx={{ py: 5, mx: 3 }}>
-          <Stack spacing={3}>
-            <TextField name="title" label="title" />
-            <TextField name="title" label="title" />
-            <TextField name="title" label="title" />
-            <TextField name="description" label="description" />
-            <TextareaAutosize
-              name="description"
-              cols={5}
-              rows={5}
-              label="description"
-            />
-            <Button variant="contained" startIcon={<AddCircleOutlined />}>
-              Add
-            </Button>
-          </Stack>
+    <Grid container spacing={3}>
+      <Grid item md={8}>
+        <Box>
+          <Box sx={{ my: 3 }}>
+            <IconButton onClick={() => navigate("/")}>
+              <ArrowBack />
+            </IconButton>
+          </Box>
+          <Box>
+            <Stack spacing={2}>
+              <TextField
+                placeholder="Ask a question..."
+                sx={{ fontSize: "20px", fontWeight: 800 }}
+              />
+              <TextField placeholder="Tell me more about your proposal" />
+            </Stack>
+            <Card sx={{ my: 3 }}>
+              <CardHeader title="Choices" />
+              <CardContent>
+                <Stack spacing={2}>
+                  <TextField placeholder="1" />
+                  <TextField placeholder="2" />
+                  <Button variant="contained">Add Choice</Button>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Box>
         </Box>
-      </Paper>
-    </Box>
+      </Grid>
+      <Grid item md={4}>
+        <Card>
+          <CardHeader title="Actions" />
+          <CardContent>
+            <Stack spacing={2}>
+              <Button variant="outlined">Select Start Date</Button>
+              <Button variant="outlined">Select Start Date</Button>
+              <Button variant="contained">Publish</Button>
+            </Stack>
+          </CardContent>
+        </Card>
+      </Grid>
+    </Grid>
   );
 };
 
