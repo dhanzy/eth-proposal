@@ -14,7 +14,6 @@ const Header = () => {
       <Container maxWidth="lg">
         <Toolbar>
           <Typography variant="h5">Proposal</Typography>
-
           <Box sx={{ flexGrow: 1 }} />
           <Box>
             <Button variant="outlined" color="secondary">

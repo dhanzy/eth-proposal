@@ -7,11 +7,10 @@ const ProposalLayout = () => {
   return (
     <MainLayout>
       <Grid container spacing={3}>
-        <Grid item md={4}>
+        <Grid item md={4} xs={12}>
           <Box
             sx={{
               width: "100%",
-              maxWidth: 360,
               bgColor: "background.paper",
             }}
           >
@@ -25,7 +24,7 @@ const ProposalLayout = () => {
             </List>
           </Box>
         </Grid>
-        <Grid item md={8}>
+        <Grid item md={8} xs={12}>
           <Outlet />
         </Grid>
       </Grid>

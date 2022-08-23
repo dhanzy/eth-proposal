@@ -57,7 +57,7 @@ const Proposal = () => {
               <CardHeader title="votes" />
               <CardContent>
                 <Stack spacing={1}>
-                  {Array(15)
+                  {Array(5)
                     .fill()
                     .map((_, index) => (
                       <Box
